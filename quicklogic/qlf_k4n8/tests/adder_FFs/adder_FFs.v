@@ -37,6 +37,7 @@ module adder_FFs (
 
 endmodule
 
+<<<<<<< HEAD
 module adder (
     cout,
     sum,
@@ -79,3 +80,44 @@ module shift_reg #(
   assign shift_out = shift[size];
 
 endmodule
+=======
+module adder(cout, sum, a, b, cin);
+parameter size = 128;  /* declare a parameter. default required */
+output cout;
+output [size-1:0] sum; 	 // sum uses the size parameter
+input cin;
+input [size-1:0] a, b;  // 'a' and 'b' use the size parameter
+
+assign {cout, sum} = a + b + cin;
+
+endmodule
+
+module shift_reg #( parameter size = 128 ) (shift_in, clk, clr, shift_out);
+
+   // Port Declaration
+   input   shift_in;
+   input   clk;
+   input   clr;
+   output  shift_out;
+   
+   reg [ size:0 ] shift; // shift register  
+   
+    always @ (posedge clk or posedge clr)
+     begin
+	if (clr)
+          shift = 0;	  	
+	else 
+	  shift = { shift[size-1:0] , shift_in } ;	
+     end
+   
+   assign shift_out = shift[size];   
+   
+endmodule 
+
+
+
+
+
+
+
+>>>>>>> master

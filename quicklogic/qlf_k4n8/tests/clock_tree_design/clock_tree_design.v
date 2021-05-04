@@ -705,6 +705,7 @@ endmodule
 //-----------------------------------------------------
 module T_ff (
 <<<<<<< HEAD
+<<<<<<< HEAD
     CLK,  // Clock Input
     CLR,  // Reset input 
     Q,
@@ -733,6 +734,8 @@ module T_ff (
 
 endmodule  //
 =======
+=======
+>>>>>>> master
 CLK    , // Clock Input
 CLR , // Reset input 
 Q,
@@ -760,5 +763,8 @@ end
 assign D_wire = T ^ Q;
 
 endmodule //
+<<<<<<< HEAD
 >>>>>>> 575c18e4 (quicklogic: add some basic regression tests)
+=======
+>>>>>>> master
 
