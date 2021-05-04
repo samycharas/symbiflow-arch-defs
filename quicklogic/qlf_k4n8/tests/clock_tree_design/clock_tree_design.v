@@ -704,8 +704,6 @@ endmodule
 // Function    : T flip-flop async reset
 //-----------------------------------------------------
 module T_ff (
-<<<<<<< HEAD
-<<<<<<< HEAD
     CLK,  // Clock Input
     CLR,  // Reset input 
     Q,
@@ -733,38 +731,3 @@ module T_ff (
   assign D_wire = T ^ Q;
 
 endmodule  //
-=======
-=======
->>>>>>> master
-CLK    , // Clock Input
-CLR , // Reset input 
-Q,
-T         // Q output
-) ;
-//-----------Input Ports---------------
-input  T, CLK, CLR ; 
-
-//-----------Output Ports---------------
-output Q;
-
-//------------Internal Variables--------
-wire D_wire;
-reg Q;
-
-
-//-------------Code Starts Here---------
-always @ ( posedge CLK or negedge CLR)
-if (~CLR) begin
-  Q <= 1'b0;
-end  else begin
-  Q <= D_wire;
-end
-
-assign D_wire = T ^ Q;
-
-endmodule //
-<<<<<<< HEAD
->>>>>>> 575c18e4 (quicklogic: add some basic regression tests)
-=======
->>>>>>> master
-
